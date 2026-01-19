@@ -9,12 +9,13 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-l);
 }
 
-@media (width >= 900px) {
+@media (width >= 600px) {
   .cards-articles > ul {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-l);
   }
 }
 
@@ -23,19 +24,11 @@
 }
 
 .cards-articles > ul > li > a {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
   text-decoration: none;
   color: inherit;
-}
-
-@media (width >= 600px) {
-  .cards-articles > ul > li > a {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-l);
-    align-items: start;
-  }
 }
 
 .cards-articles .cards-articles-card-image {

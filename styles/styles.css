@@ -425,6 +425,75 @@ main > .section.light {
 }
 
 /* ========================================
+   Section-Specific Layouts
+   ======================================== */
+
+/* Hero Section - Text left, Images right */
+main > .section.columns-hero-container {
+  max-width: var(--max-width-container-wide);
+  margin: 0 auto;
+  padding-left: var(--spacing-s);
+  padding-right: var(--spacing-s);
+}
+
+@media (width >= 900px) {
+  main > .section.columns-hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    padding-left: var(--spacing-m);
+    padding-right: var(--spacing-m);
+  }
+
+  main > .section.columns-hero-container .default-content-wrapper {
+    order: 0;
+  }
+
+  main > .section.columns-hero-container .columns-hero-wrapper {
+    order: 1;
+  }
+}
+
+/* Article Cards Section - Header left, Cards right */
+@media (width >= 900px) {
+  main > .section.cards-articles-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+    max-width: var(--max-width-container-wide);
+    margin: 0 auto;
+    padding-left: var(--spacing-m);
+    padding-right: var(--spacing-m);
+  }
+
+  main > .section.cards-articles-container .default-content-wrapper {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--spacing-l));
+  }
+}
+
+/* FAQ Section - Heading left, Accordion right */
+@media (width >= 900px) {
+  main > .section.accordion-faq-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+    max-width: var(--max-width-container-wide);
+    margin: 0 auto;
+    padding-left: var(--spacing-m);
+    padding-right: var(--spacing-m);
+  }
+
+  main > .section.accordion-faq-container .default-content-wrapper {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--spacing-l));
+  }
+}
+
+/* ========================================
    Form Elements
    ======================================== */
 
@@ -455,6 +524,14 @@ textarea:focus,
 select:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+/* ========================================
+   Metadata Block (hidden)
+   ======================================== */
+
+.section.metadata-container {
+  display: none;
 }
 
 /* ========================================
