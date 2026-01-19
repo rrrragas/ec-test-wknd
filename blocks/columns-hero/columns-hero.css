@@ -1,0 +1,37 @@
+/*
+ * Columns Hero Block
+ * Two side-by-side images for hero section
+ */
+
+.columns-hero > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
+}
+
+.columns-hero > div > div {
+  order: 1;
+}
+
+.columns-hero > div > .columns-hero-img-col {
+  order: 0;
+}
+
+.columns-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (width >= 900px) {
+  .columns-hero > div {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .columns-hero > div > div {
+    order: unset;
+  }
+}

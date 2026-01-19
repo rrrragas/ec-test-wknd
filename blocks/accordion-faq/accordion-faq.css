@@ -1,0 +1,75 @@
+/*
+ * Accordion FAQ Block
+ * Expandable FAQ items using native details/summary
+ */
+
+.accordion-faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-faq details {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion-faq details:first-of-type {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion-faq details summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+  padding: var(--spacing-m) 0;
+  padding-right: var(--spacing-xl);
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+  transition: color var(--transition-base);
+}
+
+.accordion-faq details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Plus/minus icon */
+.accordion-faq details summary::before {
+  content: '+';
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
+  transition: transform var(--transition-base);
+}
+
+.accordion-faq details[open] summary::before {
+  content: '−';
+}
+
+.accordion-faq details summary:hover {
+  color: var(--color-text-secondary);
+}
+
+.accordion-faq details[open] summary {
+  font-weight: var(--font-weight-semibold);
+}
+
+.accordion-faq details .accordion-faq-item-body {
+  padding: 0 0 var(--spacing-m);
+  padding-left: calc(24px + var(--spacing-s));
+}
+
+.accordion-faq details .accordion-faq-item-body p {
+  margin: 0;
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}

@@ -1,0 +1,107 @@
+/*
+ * Cards Articles Block
+ * Grid of article cards with images, tags, and descriptions
+ */
+
+.cards-articles > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (width >= 900px) {
+  .cards-articles > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cards-articles > ul > li {
+  display: block;
+}
+
+.cards-articles > ul > li > a {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (width >= 600px) {
+  .cards-articles > ul > li > a {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-l);
+    align-items: start;
+  }
+}
+
+.cards-articles .cards-articles-card-image {
+  line-height: 0;
+}
+
+.cards-articles .cards-articles-card-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.cards-articles .cards-articles-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Tag and metadata row */
+.cards-articles .cards-articles-card-body > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Tag styling */
+.cards-articles .cards-articles-card-body > div:first-child > span:first-child,
+.cards-articles .cards-articles-card-body > div:first-child > div:first-child {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-eyebrow);
+}
+
+/* Read time */
+.cards-articles .cards-articles-card-body > div:first-child > span:last-child,
+.cards-articles .cards-articles-card-body > div:first-child > div:last-child {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.cards-articles .cards-articles-card-body h3 {
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-snug);
+}
+
+.cards-articles .cards-articles-card-body p {
+  margin: 0;
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+/* Read link */
+.cards-articles .cards-articles-card-body > span:last-child,
+.cards-articles .cards-articles-card-body > div:last-child:not(:first-child) {
+  margin-top: var(--spacing-s);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+}
+
+/* Hover state */
+.cards-articles > ul > li > a:hover h3 {
+  text-decoration: underline;
+}

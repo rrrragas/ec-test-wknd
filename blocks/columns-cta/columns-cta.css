@@ -1,0 +1,52 @@
+/*
+ * Columns CTA Block
+ * Two-column call-to-action with text and buttons
+ */
+
+.columns-cta > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
+  align-items: center;
+}
+
+@media (width >= 900px) {
+  .columns-cta > div {
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-xl);
+  }
+}
+
+.columns-cta h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-s);
+}
+
+.columns-cta p {
+  margin: 0;
+  font-size: var(--font-size-m);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+/* Button column */
+.columns-cta > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
+@media (width >= 900px) {
+  .columns-cta > div > div:last-child {
+    min-width: 200px;
+  }
+}
+
+.columns-cta .button-container {
+  margin: 0;
+}
+
+.columns-cta a.button {
+  width: 100%;
+  text-align: center;
+}
