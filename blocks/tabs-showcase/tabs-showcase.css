@@ -1,0 +1,80 @@
+/*
+ * Tabs Showcase Block
+ * Interactive tabs with large images and headings
+ * Used in dark sections
+ */
+
+.tabs-showcase {
+  max-width: var(--max-width-container-wide);
+  margin: 0 auto;
+}
+
+/* Tab list */
+.tabs-showcase .tabs-showcase-list {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-s);
+  margin-bottom: var(--spacing-xl);
+  overflow-x: auto;
+}
+
+/* Tab buttons */
+.tabs-showcase .tabs-showcase-list button {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 15px 24px;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity var(--transition-base);
+  box-shadow: none;
+}
+
+.tabs-showcase .tabs-showcase-list button:hover {
+  opacity: 1;
+  background-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+.tabs-showcase .tabs-showcase-list button p {
+  margin: 0;
+}
+
+/* Selected tab - underline effect using inset box-shadow */
+.tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
+  opacity: 1;
+  box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Tab panels */
+.tabs-showcase .tabs-showcase-panel {
+  text-align: center;
+  padding: 0 var(--spacing-m);
+}
+
+.tabs-showcase .tabs-showcase-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-showcase .tabs-showcase-panel h3 {
+  margin: 0 0 var(--spacing-l);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-inverse);
+}
+
+.tabs-showcase .tabs-showcase-panel img {
+  width: 100%;
+  max-width: 800px;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
